@@ -6,7 +6,7 @@ const port = process.env.PORT || 4000;
 
 app.get("/api", (req, res) => {
   res.json({
-    msg: "success",
+    msg: "funciona desarrollo",
     code: 200,
   });
 });
