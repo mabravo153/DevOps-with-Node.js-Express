@@ -10,14 +10,14 @@ services:
     build: .
     environment:
       - PORT=3000
-      - SESSION_SECRET=secreto
+      - SESSION_SECRET=${SESSION_SECRET}
     depends_on:
       - mongo
   mongo:
     image: mongo
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=mabravo153
-      - MONGO_INITDB_ROOT_PASSWORD=contrasenaEjemplo
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
       - mongo-db:/data/db
   redis:

@@ -2,14 +2,14 @@ version: "3.9"
 services:
   nginx:
     ports:
-      - "80:80"
+      - "3000:80"
   node-app:
     build:
       context: .
       args:
-        - NODE_ENV=production
+        - NODE_ENV=${NODE_ENV}
     environment:
-      - NODE_ENV=production
-      - MONGO_USER=mabravo153
-      - MONGO_PASSWORD=contrasenaEjemplo
+      - NODE_ENV=${NODE_ENV}
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
     command: node app.js
