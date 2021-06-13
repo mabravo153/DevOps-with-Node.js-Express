@@ -8,7 +8,11 @@ const conexion = () => {
       { useNewUrlParser: true }
     )
     .then(() => console.log("Conectado a la base de datos"))
-    .catch((e) => console.log(e));
+    .catch((e) => {
+      setTimeout(() => {
+        conexion();
+      }, 5000);
+    });
 };
 
 module.exports = conexion;
